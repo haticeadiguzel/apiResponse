@@ -1,0 +1,30 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    container_name: apiResponse_db
+    environment:
+      POSTGRES_DB: apiResponse
+      POSTGRES_USER: hatice
+      POSTGRES_PASSWORD: ataturk
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: apiResponse_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: adiguzell.hatice@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: ataturk
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    restart: always
+
+volumes:
+  postgres_data: {}
+  pgadmin_data: {}
