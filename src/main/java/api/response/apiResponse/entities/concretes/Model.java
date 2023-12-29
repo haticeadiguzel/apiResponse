@@ -17,7 +17,7 @@ public class Model {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "modelId")
     private int modelId;
-    @Column(name = "id")
+    @Column(name = "id", unique = true)
     private int id;
     @Column(name = "url")
     private String url;
