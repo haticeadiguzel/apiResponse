@@ -1,209 +1,41 @@
-17:58:31.736 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-17:58:31.754 [restartedMain] INFO  a.r.a.ApiResponseApplication - Starting ApiResponseApplication using Java 21.0.1 with PID 71667 (/home/hatice/IdeaProjects/apiResponse/target/classes started by hatice in /home/hatice/IdeaProjects/apiResponse)
-17:58:31.755 [restartedMain] INFO  a.r.a.ApiResponseApplication - No active profile set, falling back to 1 default profile: "default"
-17:58:31.776 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-17:58:31.776 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-17:58:32.174 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-17:58:32.240 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 2 JPA repository interfaces.
-17:58:32.570 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-17:58:32.578 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-17:58:32.580 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-17:58:32.580 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
-17:58:32.602 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-17:58:32.602 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 826 ms
-17:58:32.730 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-17:58:32.754 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-17:58:32.757 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
-17:58:32.770 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-17:58:32.870 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-17:58:32.881 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-17:58:32.962 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4c29f6bb
-17:58:32.963 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-17:58:32.975 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-17:58:33.379 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-17:58:33.410 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-17:58:33.668 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-17:58:33.910 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-17:58:33.919 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-17:58:33.926 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
-17:58:33.932 [restartedMain] INFO  a.r.a.ApiResponseApplication - Started ApiResponseApplication in 2.344 seconds (process running for 2.622)
-17:58:58.634 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-17:58:58.634 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-17:58:58.635 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-17:59:03.925 [http-nio-8080-exec-1] ERROR a.r.a.b.concretes.AddressManager - Something went wrong while getting value from api: 
-org.springframework.web.reactive.function.client.WebClientRequestException: Failed to resolve 'www.usom.gov.tr' [A(1)] and search domain query for configured domains failed as well: [aydinlikevler.muradiye.com.tr]
-	at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:136)
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Error has been observed at the following site(s):
-	*__checkpoint ⇢ Request to GET https://www.usom.gov.tr/api/address/index [DefaultWebClient]
-Original Stack Trace:
-		at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:136)
-		at reactor.core.publisher.MonoErrorSupplied.subscribe(MonoErrorSupplied.java:55)
-		at reactor.core.publisher.Mono.subscribe(Mono.java:4512)
-		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222)
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222)
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222)
-		at reactor.core.publisher.MonoNext$NextSubscriber.onError(MonoNext.java:93)
-		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyMain.onError(MonoFlatMapMany.java:204)
-		at reactor.core.publisher.SerializedSubscriber.onError(SerializedSubscriber.java:124)
-		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.whenError(FluxRetryWhen.java:228)
-		at reactor.core.publisher.FluxRetryWhen$RetryWhenOtherSubscriber.onError(FluxRetryWhen.java:278)
-		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121)
-		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.maybeOnError(FluxConcatMapNoPrefetch.java:326)
-		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onNext(FluxConcatMapNoPrefetch.java:211)
-		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
-		at reactor.core.publisher.SinkManyEmitterProcessor.drain(SinkManyEmitterProcessor.java:476)
-		at reactor.core.publisher.SinkManyEmitterProcessor$EmitterInner.drainParent(SinkManyEmitterProcessor.java:620)
-		at reactor.core.publisher.FluxPublish$PubSubInner.request(FluxPublish.java:874)
-		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136)
-		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:336)
-		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136)
-		at reactor.core.publisher.Operators$DeferredSubscription.request(Operators.java:1743)
-		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.onError(FluxRetryWhen.java:195)
-		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205)
-		at reactor.netty.http.client.HttpClientConnect$MonoHttpConnect$ClientTransportSubscriber.onError(HttpClientConnect.java:311)
-		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205)
-		at reactor.netty.resources.DefaultPooledConnectionProvider$DisposableAcquire.onError(DefaultPooledConnectionProvider.java:172)
-		at reactor.netty.internal.shaded.reactor.pool.AbstractPool$Borrower.fail(AbstractPool.java:488)
-		at reactor.netty.internal.shaded.reactor.pool.SimpleDequePool.lambda$drainLoop$9(SimpleDequePool.java:433)
-		at reactor.core.publisher.FluxDoOnEach$DoOnEachSubscriber.onError(FluxDoOnEach.java:186)
-		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205)
-		at reactor.netty.resources.DefaultPooledConnectionProvider$PooledConnectionAllocator$PooledConnectionInitializer.onError(DefaultPooledConnectionProvider.java:583)
-		at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondError(MonoFlatMap.java:241)
-		at reactor.core.publisher.MonoFlatMap$FlatMapInner.onError(MonoFlatMap.java:315)
-		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
-		at reactor.core.publisher.Operators.error(Operators.java:198)
-		at reactor.core.publisher.MonoError.subscribe(MonoError.java:53)
-		at reactor.core.publisher.Mono.subscribe(Mono.java:4512)
-		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
-		at reactor.netty.transport.TransportConnector$MonoChannelPromise.tryFailure(TransportConnector.java:576)
-		at reactor.netty.transport.TransportConnector.lambda$doResolveAndConnect$11(TransportConnector.java:375)
-		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
-		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:557)
-		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
-		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
-		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629)
-		at io.netty.util.concurrent.DefaultPromise.setFailure(DefaultPromise.java:110)
-		at io.netty.resolver.InetSocketAddressResolver$2.operationComplete(InetSocketAddressResolver.java:86)
-		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
-		at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583)
-		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559)
-		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
-		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
-		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629)
-		at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118)
-		at io.netty.resolver.dns.DnsResolveContext$1.operationComplete(DnsResolveContext.java:246)
-		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
-		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:557)
-		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
-		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
-		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629)
-		at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118)
-		at io.netty.resolver.dns.DnsResolveContext.finishResolve(DnsResolveContext.java:1105)
-		at io.netty.resolver.dns.DnsResolveContext.tryToFinishResolve(DnsResolveContext.java:1044)
-		at io.netty.resolver.dns.DnsResolveContext.query(DnsResolveContext.java:432)
-		at io.netty.resolver.dns.DnsResolveContext.access$700(DnsResolveContext.java:66)
-		at io.netty.resolver.dns.DnsResolveContext$2.operationComplete(DnsResolveContext.java:500)
-		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
-		at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583)
-		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559)
-		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
-		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
-		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629)
-		at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118)
-		at io.netty.resolver.dns.DnsQueryContext.finishFailure(DnsQueryContext.java:348)
-		at io.netty.resolver.dns.DnsQueryContext$5.run(DnsQueryContext.java:290)
-		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
-		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:153)
-		at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
-		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
-		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
-		at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:416)
-		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
-		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-		at java.base/java.lang.Thread.run(Thread.java:1583)
-	Suppressed: java.lang.Exception: #block terminated with an error
-		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:103)
-		at reactor.core.publisher.Mono.block(Mono.java:1728)
-		at api.response.apiResponse.business.concretes.AddressManager.getAddressesData(AddressManager.java:37)
-		at api.response.apiResponse.webApi.controllers.AddressesController.getAll(AddressesController.java:18)
-		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-		at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
-		at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
-		at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-		at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
-		at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
-		at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-		at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-		at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-		at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-		at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
-		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
-		at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
-		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
-		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
-		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
-		at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-		at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
-		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
-		at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-		at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
-		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
-		at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-		at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
-		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
-		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
-		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
-		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
-		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
-		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
-		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-		at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: io.netty.resolver.dns.DnsResolveContext$SearchDomainUnknownHostException: Failed to resolve 'www.usom.gov.tr' [A(1)] and search domain query for configured domains failed as well: [aydinlikevler.muradiye.com.tr]
-	at io.netty.resolver.dns.DnsResolveContext.finishResolve(DnsResolveContext.java:1097)
-	at io.netty.resolver.dns.DnsResolveContext.tryToFinishResolve(DnsResolveContext.java:1044)
-	at io.netty.resolver.dns.DnsResolveContext.query(DnsResolveContext.java:432)
-	at io.netty.resolver.dns.DnsResolveContext.access$700(DnsResolveContext.java:66)
-	at io.netty.resolver.dns.DnsResolveContext$2.operationComplete(DnsResolveContext.java:500)
-	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583)
-	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
-	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
-	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629)
-	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118)
-	at io.netty.resolver.dns.DnsQueryContext.finishFailure(DnsQueryContext.java:348)
-	at io.netty.resolver.dns.DnsQueryContext$5.run(DnsQueryContext.java:290)
-	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
-	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:153)
-	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
-	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
-	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
-	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:416)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: io.netty.resolver.dns.DnsNameResolverTimeoutException: [3286: /127.0.0.53:53] DefaultDnsQuestion(www.usom.gov.tr. IN A) query '3286' via UDP timed out after 5000 milliseconds (no stack trace available)
-17:59:03.936 [http-nio-8080-exec-1] WARN  o.s.w.s.m.a.ResponseStatusExceptionResolver - Resolved [org.springframework.web.server.ResponseStatusException: 500 INTERNAL_SERVER_ERROR "Exception while calling endpoint of api for urls."]
-17:59:13.233 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-17:59:13.237 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-17:59:13.240 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19:15:43.874 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+19:15:43.892 [restartedMain] INFO  a.r.a.ApiResponseApplication - Starting ApiResponseApplication using Java 21.0.1 with PID 91465 (/home/hatice/IdeaProjects/apiResponse/target/classes started by hatice in /home/hatice/IdeaProjects/apiResponse)
+19:15:43.892 [restartedMain] INFO  a.r.a.ApiResponseApplication - No active profile set, falling back to 1 default profile: "default"
+19:15:43.927 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+19:15:43.927 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+19:15:44.442 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19:15:44.532 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 86 ms. Found 2 JPA repository interfaces.
+19:15:44.858 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+19:15:44.865 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+19:15:44.866 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:15:44.866 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+19:15:44.891 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:15:44.897 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 963 ms
+19:15:45.006 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+19:15:45.039 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+19:15:45.042 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+19:15:45.055 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+19:15:45.157 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+19:15:45.170 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19:15:45.260 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@373ed3fc
+19:15:45.260 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19:15:45.274 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+19:15:45.679 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+19:15:45.714 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+19:15:46.006 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+19:15:46.266 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+19:15:46.275 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+19:15:46.289 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+19:15:46.295 [restartedMain] INFO  a.r.a.ApiResponseApplication - Started ApiResponseApplication in 2.591 seconds (process running for 2.909)
+19:16:00.079 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+19:16:00.080 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+19:16:00.080 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+19:16:00.153 [http-nio-8080-exec-1] INFO  a.r.a.b.concretes.ModelManager - Urls: []
+19:16:00.153 [http-nio-8080-exec-1] INFO  a.r.a.b.concretes.ModelManager - Number of urls: 0
+19:16:09.462 [http-nio-8080-exec-2] INFO  a.r.a.b.concretes.AddressManager - Address added to DB
+19:16:09.514 [http-nio-8080-exec-2] INFO  a.r.a.b.concretes.AddressManager - Output from api: GetAllAddressesResponse(id=0, totalCount=265261, count=20, models=[Model(modelId=1, id=607396, url=acikdeniz-onlineozel.top, type=domain, desc=BP, source=US, date=2023-12-30 15:41:12.296642, criticality_level=4, connectiontype=PH), Model(modelId=2, id=607394, url=onaysureci.com, type=domain, desc=PH, source=IH, date=2023-12-30 15:38:32.053859, criticality_level=4, connectiontype=PH), Model(modelId=3, id=607392, url=sube-mobildenizfirsathemenkredibasvur.space, type=domain, desc=BP, source=US, date=2023-12-30 15:23:11.293651, criticality_level=4, connectiontype=PH), Model(modelId=4, id=607390, url=digitalonlinerisim.site, type=domain, desc=PH, source=IH, date=2023-12-30 15:02:01.270998, criticality_level=4, connectiontype=PH), Model(modelId=5, id=607388, url=a101-firsatlari.online, type=domain, desc=BP, source=US, date=2023-12-30 15:01:09.568906, criticality_level=4, connectiontype=PH), Model(modelId=6, id=607386, url=firsat-dolu-yeni-yil.shop, type=domain, desc=PH, source=IH, date=2023-12-30 15:00:58.99828, criticality_level=4, connectiontype=PH), Model(modelId=7, id=607384, url=kampanya-icin-son-hafta-indirimler.xyz, type=domain, desc=BP, source=US, date=2023-12-30 14:56:17.392233, criticality_level=4, connectiontype=PH), Model(modelId=8, id=607382, url=giris-turkiye.cyou, type=domain, desc=BP, source=US, date=2023-12-30 14:56:13.131907, criticality_level=4, connectiontype=PH), Model(modelId=9, id=607380, url=yeni-yil-indirimleri.shop, type=domain, desc=BP, source=US, date=2023-12-30 14:56:09.361751, criticality_level=4, connectiontype=PH), Model(modelId=10, id=607378, url=ptt-govt-tr.xyz, type=domain, desc=BP, source=US, date=2023-12-30 14:56:05.128914, criticality_level=4, connectiontype=PH), Model(modelId=11, id=607376, url=acikdeniz-yilbasi-online.buzz, type=domain, desc=BP, source=US, date=2023-12-30 14:56:00.583741, criticality_level=4, connectiontype=PH), Model(modelId=12, id=607374, url=sube-mobildenizfirsathemenkredibasvur.click, type=domain, desc=BP, source=US, date=2023-12-30 14:55:56.18927, criticality_level=4, connectiontype=PH), Model(modelId=13, id=607372, url=a101-ocakayikampanyasi.online, type=domain, desc=BP, source=US, date=2023-12-30 14:55:52.42616, criticality_level=4, connectiontype=PH), Model(modelId=14, id=607370, url=harcaharcabitmez101.net, type=domain, desc=BP, source=US, date=2023-12-30 14:55:47.86739, criticality_level=4, connectiontype=PH), Model(modelId=15, id=607368, url=gran-to.online, type=domain, desc=PH, source=IH, date=2023-12-30 14:51:21.405205, criticality_level=4, connectiontype=PH), Model(modelId=16, id=607366, url=giris.gran-to.online, type=domain, desc=PH, source=IH, date=2023-12-30 14:51:05.967677, criticality_level=4, connectiontype=PH), Model(modelId=17, id=607364, url=bilgidogrukontrol.com, type=domain, desc=PH, source=IH, date=2023-12-30 14:50:18.55045, criticality_level=4, connectiontype=PH), Model(modelId=18, id=607362, url=interaktifsistem.com, type=domain, desc=PH, source=IH, date=2023-12-30 14:49:20.910221, criticality_level=4, connectiontype=PH), Model(modelId=19, id=607360, url=uzmanbul.org, type=domain, desc=PH, source=IH, date=2023-12-30 14:48:26.432123, criticality_level=4, connectiontype=PH), Model(modelId=20, id=607358, url=ardamyarraaaa.com, type=domain, desc=PH, source=IH, date=2023-12-30 14:47:52.417956, criticality_level=4, connectiontype=PH)], page=0, pageCount=13264)
+19:16:12.990 [http-nio-8080-exec-3] INFO  a.r.a.b.concretes.ModelManager - Urls: [acikdeniz-onlineozel.top, onaysureci.com, sube-mobildenizfirsathemenkredibasvur.space, digitalonlinerisim.site, a101-firsatlari.online, firsat-dolu-yeni-yil.shop, kampanya-icin-son-hafta-indirimler.xyz, giris-turkiye.cyou, yeni-yil-indirimleri.shop, ptt-govt-tr.xyz, acikdeniz-yilbasi-online.buzz, sube-mobildenizfirsathemenkredibasvur.click, a101-ocakayikampanyasi.online, harcaharcabitmez101.net, gran-to.online, giris.gran-to.online, bilgidogrukontrol.com, interaktifsistem.com, uzmanbul.org, ardamyarraaaa.com]
+19:16:12.990 [http-nio-8080-exec-3] INFO  a.r.a.b.concretes.ModelManager - Number of urls: 20
+19:16:22.160 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+19:16:22.162 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19:16:22.163 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

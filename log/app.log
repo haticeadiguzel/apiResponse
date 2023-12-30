@@ -1,37 +1,32 @@
-18:00:58.207 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-18:00:58.210 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-18:00:58.212 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-18:01:03.176 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-18:01:03.193 [restartedMain] INFO  a.r.a.ApiResponseApplication - Starting ApiResponseApplication using Java 21.0.1 with PID 72548 (/home/hatice/IdeaProjects/apiResponse/target/classes started by hatice in /home/hatice/IdeaProjects/apiResponse)
-18:01:03.193 [restartedMain] INFO  a.r.a.ApiResponseApplication - No active profile set, falling back to 1 default profile: "default"
-18:01:03.214 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-18:01:03.214 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-18:01:03.607 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-18:01:03.675 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 2 JPA repository interfaces.
-18:01:04.000 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-18:01:04.007 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-18:01:04.008 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-18:01:04.008 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
-18:01:04.031 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-18:01:04.032 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 817 ms
-18:01:04.132 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-18:01:04.156 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-18:01:04.159 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
-18:01:04.172 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-18:01:04.270 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-18:01:04.282 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-18:01:04.362 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@25f5ed5
-18:01:04.362 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-18:01:04.375 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-18:01:04.805 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-18:01:04.836 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-18:01:05.137 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-18:01:05.355 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-18:01:05.362 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-18:01:05.369 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
-18:01:05.375 [restartedMain] INFO  a.r.a.ApiResponseApplication - Started ApiResponseApplication in 2.343 seconds (process running for 2.619)
-18:01:09.180 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-18:01:09.180 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-18:01:09.181 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-18:01:09.790 [http-nio-8080-exec-1] INFO  a.r.a.b.concretes.AddressManager - Address added to DB
-18:01:09.844 [http-nio-8080-exec-1] INFO  a.r.a.b.concretes.AddressManager - Output from api: GetAllAddressesResponse(id=0, totalCount=265255, count=20, models=[Model(modelId=421, id=607384, url=kampanya-icin-son-hafta-indirimler.xyz, type=domain, desc=BP, source=US, date=2023-12-30 14:56:17.392233, criticality_level=4, connectiontype=PH), Model(modelId=422, id=607382, url=giris-turkiye.cyou, type=domain, desc=BP, source=US, date=2023-12-30 14:56:13.131907, criticality_level=4, connectiontype=PH), Model(modelId=423, id=607380, url=yeni-yil-indirimleri.shop, type=domain, desc=BP, source=US, date=2023-12-30 14:56:09.361751, criticality_level=4, connectiontype=PH), Model(modelId=424, id=607378, url=ptt-govt-tr.xyz, type=domain, desc=BP, source=US, date=2023-12-30 14:56:05.128914, criticality_level=4, connectiontype=PH), Model(modelId=425, id=607376, url=acikdeniz-yilbasi-online.buzz, type=domain, desc=BP, source=US, date=2023-12-30 14:56:00.583741, criticality_level=4, connectiontype=PH), Model(modelId=426, id=607374, url=sube-mobildenizfirsathemenkredibasvur.click, type=domain, desc=BP, source=US, date=2023-12-30 14:55:56.18927, criticality_level=4, connectiontype=PH), Model(modelId=427, id=607372, url=a101-ocakayikampanyasi.online, type=domain, desc=BP, source=US, date=2023-12-30 14:55:52.42616, criticality_level=4, connectiontype=PH), Model(modelId=428, id=607370, url=harcaharcabitmez101.net, type=domain, desc=BP, source=US, date=2023-12-30 14:55:47.86739, criticality_level=4, connectiontype=PH), Model(modelId=429, id=607368, url=gran-to.online, type=domain, desc=PH, source=IH, date=2023-12-30 14:51:21.405205, criticality_level=4, connectiontype=PH), Model(modelId=430, id=607366, url=giris.gran-to.online, type=domain, desc=PH, source=IH, date=2023-12-30 14:51:05.967677, criticality_level=4, connectiontype=PH), Model(modelId=431, id=607364, url=bilgidogrukontrol.com, type=domain, desc=PH, source=IH, date=2023-12-30 14:50:18.55045, criticality_level=4, connectiontype=PH), Model(modelId=432, id=607362, url=interaktifsistem.com, type=domain, desc=PH, source=IH, date=2023-12-30 14:49:20.910221, criticality_level=4, connectiontype=PH), Model(modelId=433, id=607360, url=uzmanbul.org, type=domain, desc=PH, source=IH, date=2023-12-30 14:48:26.432123, criticality_level=4, connectiontype=PH), Model(modelId=434, id=607358, url=ardamyarraaaa.com, type=domain, desc=PH, source=IH, date=2023-12-30 14:47:52.417956, criticality_level=4, connectiontype=PH), Model(modelId=435, id=607356, url=detect-dyson.com.tr, type=domain, desc=PH, source=IH, date=2023-12-30 14:46:38.0462, criticality_level=4, connectiontype=PH), Model(modelId=436, id=607354, url=qiyewto.bond, type=domain, desc=PH, source=IH, date=2023-12-30 13:33:39.25071, criticality_level=4, connectiontype=PH), Model(modelId=437, id=607352, url=pramguvendehizmetin.online, type=domain, desc=BP, source=US, date=2023-12-30 13:19:09.385098, criticality_level=4, connectiontype=PH), Model(modelId=438, id=607350, url=sigortnmet.site, type=domain, desc=PH, source=IH, date=2023-12-30 13:15:51.008881, criticality_level=4, connectiontype=PH), Model(modelId=439, id=607348, url=a.sigortnmet.site, type=domain, desc=PH, source=IH, date=2023-12-30 13:15:33.925367, criticality_level=4, connectiontype=PH), Model(modelId=440, id=607346, url=dolu-firsat-yili.shop, type=domain, desc=PH, source=IH, date=2023-12-30 13:15:00.893699, criticality_level=4, connectiontype=PH)], page=0, pageCount=13263)
+19:20:35.644 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+19:20:35.647 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19:20:35.650 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19:20:40.635 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+19:20:40.655 [restartedMain] INFO  a.r.a.ApiResponseApplication - Starting ApiResponseApplication using Java 21.0.1 with PID 93052 (/home/hatice/IdeaProjects/apiResponse/target/classes started by hatice in /home/hatice/IdeaProjects/apiResponse)
+19:20:40.655 [restartedMain] INFO  a.r.a.ApiResponseApplication - No active profile set, falling back to 1 default profile: "default"
+19:20:40.677 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+19:20:40.677 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+19:20:41.081 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19:20:41.147 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 2 JPA repository interfaces.
+19:20:41.458 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+19:20:41.464 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+19:20:41.466 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:20:41.466 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+19:20:41.489 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:20:41.495 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 812 ms
+19:20:41.589 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+19:20:41.614 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+19:20:41.617 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+19:20:41.632 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+19:20:41.734 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+19:20:41.747 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19:20:41.829 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1f945b17
+19:20:41.830 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19:20:41.843 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+19:20:42.255 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+19:20:42.288 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+19:20:42.559 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+19:20:42.810 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+19:20:42.818 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+19:20:42.829 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+19:20:42.835 [restartedMain] INFO  a.r.a.ApiResponseApplication - Started ApiResponseApplication in 2.352 seconds (process running for 2.638)
