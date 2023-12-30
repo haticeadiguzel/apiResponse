@@ -1,36 +1,92 @@
-21:12:29.193 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-21:12:29.200 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-21:12:29.229 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-21:12:35.479 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-21:12:35.559 [restartedMain] INFO  a.r.a.ApiResponseApplication - Starting ApiResponseApplication using Java 21.0.1 with PID 365063 (/home/hatice/IdeaProjects/apiResponse/target/classes started by hatice in /home/hatice/IdeaProjects/apiResponse)
-21:12:35.561 [restartedMain] INFO  a.r.a.ApiResponseApplication - No active profile set, falling back to 1 default profile: "default"
-21:12:35.657 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-21:12:35.657 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-21:12:37.629 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-21:12:37.852 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 209 ms. Found 1 JPA repository interface.
-21:12:39.146 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-21:12:39.172 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-21:12:39.177 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-21:12:39.178 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
-21:12:39.271 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-21:12:39.274 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3614 ms
-21:12:39.790 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-21:12:39.938 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-21:12:39.958 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
-21:12:40.030 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-21:12:40.493 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-21:12:40.542 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-21:12:40.878 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7f2f5e5e
-21:12:40.881 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-21:12:40.933 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-21:12:42.264 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-21:12:42.389 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-21:12:43.405 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-21:12:44.461 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-21:12:44.493 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-21:12:44.522 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
-21:12:44.543 [restartedMain] INFO  a.r.a.ApiResponseApplication - Started ApiResponseApplication in 9.635 seconds (process running for 10.609)
-21:13:09.320 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-21:13:09.321 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-21:13:09.324 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-21:13:11.332 [http-nio-8080-exec-1] INFO  a.r.a.b.concretes.AddressManager - Output from api: GetAllAddressesResponse(id=0, totalCount=265138, count=20, models=[Model(modelId=0, id=607150, url=kredi-acikdenizsubesizalimmobilde.click, type=domain, desc=BP, source=IH, date=2023-12-29 17:31:48.550474, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607148, url=hadikapinizda2024.online, type=domain, desc=PH, source=IH, date=2023-12-29 17:30:02.325468, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607146, url=acarfilo.net.tr, type=domain, desc=PH, source=IH, date=2023-12-29 17:30:02.325468, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607144, url=mokekoks.xyz, type=domain, desc=PH, source=IH, date=2023-12-29 16:59:57.121256, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607142, url=idsadvvtt-dvvtt.com, type=domain, desc=PH, source=IH, date=2023-12-29 16:58:43.643503, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607140, url=carkcevir-kampanyasitesi.cloud, type=domain, desc=BP, source=US, date=2023-12-29 16:55:50.109542, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607138, url=iletisimsedef.com, type=domain, desc=PH, source=IH, date=2023-12-29 16:48:19.770979, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607136, url=mxtkw.com, type=domain, desc=PH, source=IH, date=2023-12-29 16:17:03.294912, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607134, url=kimlrndv.online, type=domain, desc=PH, source=IH, date=2023-12-29 16:16:23.413559, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607132, url=llllizmrmxxll.net, type=domain, desc=PH, source=IH, date=2023-12-29 16:15:54.551594, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607130, url=intrktfbayi.com, type=domain, desc=PH, source=IH, date=2023-12-29 16:12:54.745841, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607128, url=iletiismediadedd93458.com, type=domain, desc=PH, source=IH, date=2023-12-29 16:08:21.914622, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607126, url=katilimhacfirsatzaman.com, type=domain, desc=BP, source=US, date=2023-12-29 15:55:50.69381, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607124, url=ppt-gov-post.shop, type=domain, desc=PH, source=IH, date=2023-12-29 15:08:04.503206, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607122, url=asdfghjklzxcv.net, type=domain, desc=PH, source=IH, date=2023-12-29 15:08:04.503206, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607120, url=indirim-1-0-1.com.tr, type=domain, desc=PH, source=IH, date=2023-12-29 14:53:43.257888, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607118, url=a101-cumamadsvor.com, type=domain, desc=PH, source=IH, date=2023-12-29 14:49:57.841888, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607116, url=satisim-23.site, type=domain, desc=PH, source=IH, date=2023-12-29 14:47:57.56127, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607114, url=ptt1govs.lol, type=domain, desc=PH, source=IH, date=2023-12-29 14:27:06.410953, criticality_level=4, connectiontype=PH), Model(modelId=0, id=607112, url=yilbasi-firsatlari.name.tr, type=domain, desc=PH, source=IH, date=2023-12-29 14:24:19.549387, criticality_level=4, connectiontype=PH)], page=0, pageCount=13257)
+12:57:04.267 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+12:57:04.275 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+12:57:04.280 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+12:57:11.487 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+12:57:11.551 [restartedMain] INFO  a.r.a.ApiResponseApplication - Starting ApiResponseApplication using Java 21.0.1 with PID 17558 (/home/hatice/IdeaProjects/apiResponse/target/classes started by hatice in /home/hatice/IdeaProjects/apiResponse)
+12:57:11.553 [restartedMain] INFO  a.r.a.ApiResponseApplication - No active profile set, falling back to 1 default profile: "default"
+12:57:11.657 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+12:57:11.657 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+12:57:13.073 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:57:13.236 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 152 ms. Found 1 JPA repository interface.
+12:57:14.176 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+12:57:14.197 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:57:14.201 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:57:14.202 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+12:57:14.273 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:57:14.275 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2615 ms
+12:57:14.621 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:57:14.704 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+12:57:14.716 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+12:57:14.763 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+12:57:15.115 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+12:57:15.152 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+12:57:15.416 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@74c9180f
+12:57:15.418 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+12:57:15.452 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+12:57:16.471 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+12:57:16.536 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:57:17.334 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+12:57:18.104 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+12:57:18.130 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:57:18.158 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+12:57:18.182 [restartedMain] INFO  a.r.a.ApiResponseApplication - Started ApiResponseApplication in 7.399 seconds (process running for 8.485)
+12:57:22.361 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+12:57:22.362 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+12:57:22.364 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+12:57:24.137 [http-nio-8080-exec-2] ERROR a.r.a.b.concretes.AddressManager - Something went wrong while getting value from api: 
+java.lang.NullPointerException: Cannot invoke "api.response.apiResponse.core.utilities.mappers.ModelMapperService.forResponse()" because "this.modelMapperService" is null
+	at api.response.apiResponse.business.concretes.AddressManager.convertToAddressEntity(AddressManager.java:64)
+	at api.response.apiResponse.business.concretes.AddressManager.getAddressesData(AddressManager.java:43)
+	at api.response.apiResponse.webApi.controllers.AddressesController.getAll(AddressesController.java:18)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+12:57:24.148 [http-nio-8080-exec-2] WARN  o.s.w.s.m.a.ResponseStatusExceptionResolver - Resolved [org.springframework.web.server.ResponseStatusException: 500 INTERNAL_SERVER_ERROR "Exception while calling endpoint of api for urls."]
+12:57:53.009 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+12:57:53.016 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+12:57:53.021 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
