@@ -46,7 +46,7 @@ public class AddressManager implements AddressService {
             throw new ResponseStatusException(
                     HttpStatus.INTERNAL_SERVER_ERROR,
                     "Exception while calling endpoint of api for urls."
-                    );
+            );
         }
     }
 

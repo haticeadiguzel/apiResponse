@@ -1,0 +1,91 @@
+11:02:16.379 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+11:02:16.462 [restartedMain] INFO  a.r.a.ApiResponseApplication - Starting ApiResponseApplication using Java 21.0.1 with PID 325183 (/home/hatice/IdeaProjects/apiResponse/target/classes started by hatice in /home/hatice/IdeaProjects/apiResponse)
+11:02:16.464 [restartedMain] INFO  a.r.a.ApiResponseApplication - No active profile set, falling back to 1 default profile: "default"
+11:02:16.577 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+11:02:16.577 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+11:02:18.366 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+11:02:18.539 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 161 ms. Found 2 JPA repository interfaces.
+11:02:19.779 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+11:02:19.808 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+11:02:19.813 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:02:19.814 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+11:02:19.902 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:02:19.905 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3325 ms
+11:02:20.361 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11:02:20.456 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+11:02:20.470 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+11:02:20.523 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+11:02:21.036 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+11:02:21.100 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11:02:21.492 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@34295be
+11:02:21.496 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11:02:21.559 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+11:02:22.756 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+11:02:22.833 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11:02:23.321 [restartedMain] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation is not supported on static fields: private static java.util.regex.Pattern api.response.apiResponse.business.concretes.ModelManager.pattern
+11:02:23.905 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11:02:24.919 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+11:02:24.946 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+11:02:24.968 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+11:02:24.993 [restartedMain] INFO  a.r.a.ApiResponseApplication - Started ApiResponseApplication in 9.275 seconds (process running for 10.613)
+11:02:27.343 [scheduling-1] INFO  a.r.a.b.concretes.AddressManager - Address added to DB
+11:02:27.513 [scheduling-1] INFO  a.r.a.b.concretes.AddressManager - Output from api: GetAllAddressesResponse(id=0, totalCount=265571, count=20, models=[Model(modelId=841, id=608024, url=yeniyilhediyeniz.com, type=domain, desc=BP, source=IH, date=2024-01-02 07:39:41.552565, criticality_level=4, connectiontype=PH), Model(modelId=842, id=608022, url=ziraat-mobil.yeniyilhediyeniz.com, type=domain, desc=BP, source=IH, date=2024-01-02 07:39:41.552565, criticality_level=4, connectiontype=PH), Model(modelId=843, id=608018, url=kti.icu, type=domain, desc=BP, source=IH, date=2024-01-02 07:36:57.632871, criticality_level=4, connectiontype=PH), Model(modelId=844, id=608016, url=mobildenizv2-yilbasi-online.buzz, type=domain, desc=BP, source=US, date=2024-01-02 07:27:14.23738, criticality_level=4, connectiontype=PH), Model(modelId=845, id=608010, url=tuvu-muayene.online, type=domain, desc=BP, source=IH, date=2024-01-02 06:57:31.455013, criticality_level=4, connectiontype=PH), Model(modelId=846, id=608008, url=muayenet.online, type=domain, desc=BP, source=IH, date=2024-01-02 06:57:31.455013, criticality_level=4, connectiontype=PH), Model(modelId=847, id=608006, url=avukathaciz.info, type=domain, desc=PH, source=SO, date=2024-01-02 06:48:25.29333, criticality_level=4, connectiontype=PH), Model(modelId=848, id=608004, url=sizin-firsatlariniz-yeni-yagmuru.com, type=domain, desc=BP, source=US, date=2024-01-02 06:29:32.28953, criticality_level=4, connectiontype=PH), Model(modelId=849, id=608002, url=firsatlarbildirimi.com, type=domain, desc=BP, source=IH, date=2024-01-02 06:17:04.814084, criticality_level=4, connectiontype=PH), Model(modelId=850, id=608000, url=maxaracikiralama.com, type=domain, desc=BP, source=US, date=2024-01-02 05:53:14.095911, criticality_level=4, connectiontype=PH), Model(modelId=851, id=607998, url=secaccs30116254teamacc.com, type=domain, desc=PH, source=IH, date=2024-01-02 05:49:46.075777, criticality_level=4, connectiontype=PH), Model(modelId=852, id=607996, url=kuveyt-turktr.secaccs30116254teamacc.com, type=domain, desc=PH, source=IH, date=2024-01-02 05:49:35.733026, criticality_level=4, connectiontype=PH), Model(modelId=853, id=607994, url=market-a101kamp.com.tr, type=domain, desc=PH, source=IH, date=2024-01-02 05:40:02.536794, criticality_level=4, connectiontype=PH), Model(modelId=854, id=607992, url=marketi-bugune-ozel-indirimler-var-tr.online, type=domain, desc=PH, source=IH, date=2024-01-02 05:39:18.380154, criticality_level=4, connectiontype=PH), Model(modelId=855, id=607990, url=a1-0-1.marketi-bugune-ozel-indirimler-var-tr.online, type=domain, desc=PH, source=IH, date=2024-01-02 05:39:10.200896, criticality_level=4, connectiontype=PH), Model(modelId=856, id=607988, url=pazartesifir.com, type=domain, desc=PH, source=IH, date=2024-01-02 05:38:14.315935, criticality_level=4, connectiontype=PH), Model(modelId=857, id=607986, url=a101.pazartesifir.com, type=domain, desc=PH, source=IH, date=2024-01-02 05:38:06.081083, criticality_level=4, connectiontype=PH), Model(modelId=858, id=607984, url=evliliksbasvurruburrda.com.tr, type=domain, desc=BP, source=US, date=2024-01-02 05:03:14.372167, criticality_level=4, connectiontype=PH), Model(modelId=859, id=607982, url=kampanyawebsitesi.com, type=domain, desc=PH, source=IH, date=2024-01-02 05:00:57.762637, criticality_level=4, connectiontype=PH), Model(modelId=860, id=607980, url=a101-com-tr.kampanyawebsitesi.com, type=domain, desc=PH, source=IH, date=2024-01-02 05:00:47.514687, criticality_level=4, connectiontype=PH)], page=0, pageCount=13279)
+11:02:32.182 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:02:32.183 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11:02:32.187 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+11:02:32.789 [http-nio-8080-exec-1] INFO  a.r.a.b.concretes.ModelManager - Urls: [tuvu-muayene.online, muayenet.online, avukathaciz.info, sizin-firsatlariniz-yeni-yagmuru.com, firsatlarbildirimi.com, maxaracikiralama.com, secaccs30116254teamacc.com, kuveyt-turktr.secaccs30116254teamacc.com, market-a101kamp.com.tr, marketi-bugune-ozel-indirimler-var-tr.online, a1-0-1.marketi-bugune-ozel-indirimler-var-tr.online, pazartesifir.com, a101.pazartesifir.com, evliliksbasvurruburrda.com.tr, kampanyawebsitesi.com, a101-com-tr.kampanyawebsitesi.com, haftanin-yildizlari-101.online, telveddevlet.com, hizmetaile150.com, hizmetleregir.app, mobildenizv2-yilbasi-online.buzz, yeniyilhediyeniz.com, ziraat-mobil.yeniyilhediyeniz.com, kti.icu]
+11:02:32.790 [http-nio-8080-exec-1] INFO  a.r.a.b.concretes.ModelManager - Number of urls: 24
+11:02:32.964 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.util.regex.Pattern.matcher(java.lang.CharSequence)" because "api.response.apiResponse.business.concretes.ModelManager.pattern" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "java.util.regex.Pattern.matcher(java.lang.CharSequence)" because "api.response.apiResponse.business.concretes.ModelManager.pattern" is null
+	at api.response.apiResponse.business.concretes.ModelManager.getWhoisServer(ModelManager.java:122)
+	at api.response.apiResponse.business.concretes.ModelManager.crunchifyWhois(ModelManager.java:80)
+	at api.response.apiResponse.business.concretes.ModelManager.getAllUrls(ModelManager.java:55)
+	at api.response.apiResponse.webApi.controllers.ModelsController.getAllUrlsFromDbs(ModelsController.java:22)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
