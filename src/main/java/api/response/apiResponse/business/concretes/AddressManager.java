@@ -8,6 +8,7 @@ import api.response.apiResponse.entities.concretes.Address;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +24,7 @@ public class AddressManager implements AddressService {
     @Value("${address.url}")
     private String url;
 
+    @Scheduled(initialDelay = 1000, fixedRate =  1000 * 60 * 6)
     @Override
     public GetAllAddressesResponse getAddressesData() {
         try {
