@@ -25,6 +25,26 @@ services:
       - pgadmin_data:/var/lib/pgadmin
     restart: always
 
+  redis:
+    image: redis
+    container_name: apiResponse_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/var/lib/redis/data
+    restart: always
+
+  redis_insight:
+    image: redislabs/redisinsight
+    container_name: apiResponse_redis_insight
+    ports:
+      - "8001:8001"
+    volumes:
+      - redis_insight_data:/db
+    restart: always
+
 volumes:
   postgres_data: {}
   pgadmin_data: {}
+  redis_data: {}
+  redis_insight_data: {}

@@ -20,10 +20,13 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 public class ModelManager implements ModelService {
-    @Autowired
     private ModelRepository modelRepository;
-    @Autowired
     private ModelMapperService modelMapperService;
+
+    public ModelManager(ModelRepository modelRepository, ModelMapperService modelMapperService) {
+        this.modelRepository = modelRepository;
+        this.modelMapperService = modelMapperService;
+    }
 
     @Override
     public List<GetAllUrls> getAllUrls() {
@@ -39,7 +42,7 @@ public class ModelManager implements ModelService {
         }
         ArrayList<String> newUrls = removeDuplicates(urls);
 
-        ModelManager obj = new ModelManager();
+        ModelManager obj = new ModelManager(modelRepository, modelMapperService);
 
         log.info("Urls: " + newUrls);
         log.info("Number of urls: " + newUrls.size());

@@ -1,9 +1,0 @@
-11:34:30.503 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-11:34:30.505 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-11:34:30.509 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-11:34:31.388 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 354 ms
-11:34:35.955 [http-nio-8080-exec-5] INFO  a.r.a.b.concretes.ModelManager - Urls: [tuvu-muayene.online, muayenet.online, avukathaciz.info, sizin-firsatlariniz-yeni-yagmuru.com, firsatlarbildirimi.com, maxaracikiralama.com, secaccs30116254teamacc.com, kuveyt-turktr.secaccs30116254teamacc.com, market-a101kamp.com.tr, marketi-bugune-ozel-indirimler-var-tr.online, a1-0-1.marketi-bugune-ozel-indirimler-var-tr.online, pazartesifir.com, a101.pazartesifir.com, evliliksbasvurruburrda.com.tr, kampanyawebsitesi.com, a101-com-tr.kampanyawebsitesi.com, haftanin-yildizlari-101.online, telveddevlet.com, hizmetaile150.com, hizmetleregir.app, mobildenizv2-yilbasi-online.buzz, yeniyilhediyeniz.com, ziraat-mobil.yeniyilhediyeniz.com, kti.icu]
-11:34:35.956 [http-nio-8080-exec-5] INFO  a.r.a.b.concretes.ModelManager - Number of urls: 24
-11:42:24.034 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-11:42:24.040 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-11:42:24.045 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
