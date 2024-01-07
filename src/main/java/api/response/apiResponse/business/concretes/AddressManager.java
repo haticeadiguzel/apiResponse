@@ -81,13 +81,14 @@ public class AddressManager implements AddressService {
                 for (Model model : models) {
                     String url = model.getUrl();
                     jedis.sadd("urls", url);
-                    urls.add(url);
-                    System.out.println(url);
+                    Whois whois = new Gson().fromJson(crunchifyWhois(url).toString(), Whois.class);
+                    String DomainName = whois.getDomainName();
+                    System.out.println("Domain Name: "+ DomainName);
+                    redisRepository.save(whois);
                 }
             } catch (WebClientResponseException.TooManyRequests e) {
                 log.warn("Too many Get request to api...");
                 try {
-                    System.out.println(urls.toArray().length);
                     Thread.sleep(3000);
                     continue;
                 } catch (Exception exception) {
@@ -95,13 +96,6 @@ public class AddressManager implements AddressService {
                 }
 
             }
-        }
-
-        for (String url : urls) {
-            Whois whois = new Gson().fromJson(crunchifyWhois(url).toString(), Whois.class);
-            String DomainName = whois.getDomainName();
-            System.out.println("Domain Name: "+ DomainName);
-            redisRepository.save(whois);
         }
         return responses;
     }
