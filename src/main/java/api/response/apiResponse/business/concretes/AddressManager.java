@@ -4,7 +4,6 @@ import api.response.apiResponse.business.DTOs.Responses.GetAllAddressesResponse;
 import api.response.apiResponse.business.abstracts.AddressService;
 import api.response.apiResponse.core.utilities.mappers.ModelMapperService;
 import api.response.apiResponse.dataAccess.abstracts.AddressRepository;
-import api.response.apiResponse.dataAccess.abstracts.RedisRepository;
 import api.response.apiResponse.entities.concretes.Address;
 import api.response.apiResponse.entities.concretes.Model;
 import api.response.apiResponse.entities.concretes.Whois;
@@ -12,13 +11,12 @@ import org.apache.commons.net.whois.WhoisClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.http.HttpStatus;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.json.JSONObject;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
 import com.google.gson.Gson;
 
 import java.util.*;
@@ -29,15 +27,13 @@ import java.util.*;
 public class AddressManager implements AddressService {
     final private AddressRepository addressRepository;
     final private ModelMapperService modelMapperService;
-    final private RedisRepository redisRepository;
     final private RedisTemplate<String, String> redisTemplate;
     @Value("${address.url}")
     private String url;
 
-    public AddressManager(AddressRepository addressRepository, ModelMapperService modelMapperService, RedisRepository redisRepository, RedisTemplate<String, String> redisTemplate) {
+    public AddressManager(AddressRepository addressRepository, ModelMapperService modelMapperService, RedisTemplate<String, String> redisTemplate) {
         this.addressRepository = addressRepository;
         this.modelMapperService = modelMapperService;
-        this.redisRepository = redisRepository;
         this.redisTemplate = redisTemplate;
     }
 
@@ -46,18 +42,16 @@ public class AddressManager implements AddressService {
     public List<GetAllAddressesResponse> getAddressesData() {
         List<GetAllAddressesResponse> responses = new ArrayList<>();
         Set<String> urls = new HashSet<>();
-        long pageCount = 10;
 
-//        WebClient.Builder builder0 = WebClient.builder();
-//        GetAllAddressesResponse address0 = builder0.build()
-//                .get()
-//                .uri(url)
-//                .retrieve()
-//                .bodyToMono(GetAllAddressesResponse.class)
-//                .block();
-//        Address addressEntity0 = convertToAddressEntity(address0);
-//        long pageCount = addressEntity0.getPageCount();
-
+        WebClient.Builder builderPageCount = WebClient.builder();
+        GetAllAddressesResponse addressPageCount = builderPageCount.build()
+                .get()
+                .uri(url)
+                .retrieve()
+                .bodyToMono(GetAllAddressesResponse.class)
+                .block();
+        Address addressEntityPageCount = convertToAddressEntity(addressPageCount);
+        long pageCount = addressEntityPageCount.getPageCount();
 
         for (int page = 1; page < pageCount; page++) {
             try {
@@ -78,17 +72,21 @@ public class AddressManager implements AddressService {
                 for (Model model : models) {
                     String url = model.getUrl();
                     urls.add(url);
+                    System.out.println(url);
                 }
-            }
-            catch (Exception exception) {
-                log.error("Something went wrong while getting value from api: ", exception);
-                throw new ResponseStatusException(
-                        HttpStatus.INTERNAL_SERVER_ERROR,
-                        "Exception while calling endpoint of api for urls."
-                );
+            } catch (WebClientResponseException.TooManyRequests e) {
+                log.warn("Too many Get request to api...");
+                try {
+                    System.out.println(urls.toArray().length);
+                    Thread.sleep(3000);
+                    continue;
+                } catch (Exception exception) {
+                    log.error("Error: " + exception);
+                }
+
             }
         }
-        System.out.println(urls);
+
 //        saveUrls(urls);
 
         for (String url : urls) {
