@@ -10,4 +10,5 @@ public interface AddressService {
     List<GetAllAddressesResponse> getAddressesData();
     Address convertToAddressEntity(GetAllAddressesResponse addressResponse);
     JSONObject crunchifyWhois(String url);
+    String getWhois(String url);
 }

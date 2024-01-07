@@ -2,8 +2,6 @@ package api.response.apiResponse.entities.concretes;
 
 
 import com.google.gson.annotations.SerializedName;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,9 +14,8 @@ import java.io.Serializable;
 @RedisHash("whoises")
 public class Whois implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
+    @SerializedName("URL")
+    private String id;
     @SerializedName("Domain Name")
     private String domainName;
     @SerializedName("Registry Domain ID")
