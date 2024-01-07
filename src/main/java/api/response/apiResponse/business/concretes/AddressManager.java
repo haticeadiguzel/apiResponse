@@ -4,6 +4,7 @@ import api.response.apiResponse.business.DTOs.Responses.GetAllAddressesResponse;
 import api.response.apiResponse.business.abstracts.AddressService;
 import api.response.apiResponse.core.utilities.mappers.ModelMapperService;
 import api.response.apiResponse.dataAccess.abstracts.AddressRepository;
+import api.response.apiResponse.dataAccess.abstracts.RedisRepository;
 import api.response.apiResponse.entities.concretes.Address;
 import api.response.apiResponse.entities.concretes.Model;
 import api.response.apiResponse.entities.concretes.Whois;
@@ -18,6 +19,7 @@ import org.json.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 import com.google.gson.Gson;
+import redis.clients.jedis.Jedis;
 
 import java.util.*;
 
@@ -27,31 +29,38 @@ import java.util.*;
 public class AddressManager implements AddressService {
     final private AddressRepository addressRepository;
     final private ModelMapperService modelMapperService;
-    final private RedisTemplate<String, String> redisTemplate;
+    final private RedisRepository redisRepository;
     @Value("${address.url}")
     private String url;
+    @Value("${spring.redis.host}")
+    private String host;
+    @Value("${spring.redis.port}")
+    private int port;
 
-    public AddressManager(AddressRepository addressRepository, ModelMapperService modelMapperService, RedisTemplate<String, String> redisTemplate) {
+
+    public AddressManager(AddressRepository addressRepository, ModelMapperService modelMapperService, RedisRepository redisRepository) {
         this.addressRepository = addressRepository;
         this.modelMapperService = modelMapperService;
-        this.redisTemplate = redisTemplate;
+        this.redisRepository = redisRepository;
     }
 
     @Scheduled(initialDelay = 1000, fixedRate = 21600000)
     @Override
     public List<GetAllAddressesResponse> getAddressesData() {
         List<GetAllAddressesResponse> responses = new ArrayList<>();
+        Jedis jedis = new Jedis(host, port);
         Set<String> urls = new HashSet<>();
+        int pageCount = 10;
 
-        WebClient.Builder builderPageCount = WebClient.builder();
-        GetAllAddressesResponse addressPageCount = builderPageCount.build()
-                .get()
-                .uri(url)
-                .retrieve()
-                .bodyToMono(GetAllAddressesResponse.class)
-                .block();
-        Address addressEntityPageCount = convertToAddressEntity(addressPageCount);
-        long pageCount = addressEntityPageCount.getPageCount();
+//        WebClient.Builder builderPageCount = WebClient.builder();
+//        GetAllAddressesResponse addressPageCount = builderPageCount.build()
+//                .get()
+//                .uri(url)
+//                .retrieve()
+//                .bodyToMono(GetAllAddressesResponse.class)
+//                .block();
+//        Address addressEntityPageCount = convertToAddressEntity(addressPageCount);
+//        long pageCount = addressEntityPageCount.getPageCount();
 
         for (int page = 1; page < pageCount; page++) {
             try {
@@ -71,6 +80,7 @@ public class AddressManager implements AddressService {
                 List<Model> models = addressEntity.getModels();
                 for (Model model : models) {
                     String url = model.getUrl();
+                    jedis.sadd("urls", url);
                     urls.add(url);
                     System.out.println(url);
                 }
@@ -87,17 +97,11 @@ public class AddressManager implements AddressService {
             }
         }
 
-//        saveUrls(urls);
-
         for (String url : urls) {
-            if(crunchifyWhois(url).toString().equals("{}")){
-                System.out.println("No match for " + url);
-            } else {
-                Whois whois = new Gson().fromJson(crunchifyWhois(url).toString(), Whois.class);
-                String DomainName = whois.getDomainName();
-                System.out.println("Domain Name: "+ DomainName);
-//                redisRepository.save(whois);
-            }
+            Whois whois = new Gson().fromJson(crunchifyWhois(url).toString(), Whois.class);
+            String DomainName = whois.getDomainName();
+            System.out.println("Domain Name: "+ DomainName);
+            redisRepository.save(whois);
         }
         return responses;
     }
@@ -150,9 +154,5 @@ public class AddressManager implements AddressService {
             log.error("Error: ", e);
         }
         return null;
-    }
-
-    public void saveUrls(Set<String> urls) {
-        redisTemplate.opsForSet().add("urls", urls.toArray(new String[0]));
     }
 }
