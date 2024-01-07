@@ -1,0 +1,16 @@
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/ApiResponseApplication.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/business/abstracts/AddressService.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/business/concretes/ModelManager.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/core/utilities/mappers/ModelMapperManager.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/webApi/controllers/ModelsController.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/entities/concretes/Address.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/dataAccess/abstracts/ModelRepository.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/webApi/controllers/AddressesController.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/entities/concretes/Model.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/business/DTOs/Responses/GetAllAddressesResponse.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/config/RedisConfig.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/core/utilities/mappers/ModelMapperService.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/business/abstracts/ModelService.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/dataAccess/abstracts/AddressRepository.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/business/concretes/AddressManager.java
+/home/hatice/IdeaProjects/apiResponse/src/main/java/api/response/apiResponse/business/DTOs/Responses/GetAllUrls.java

@@ -1,0 +1,15 @@
+api/response/apiResponse/webApi/controllers/ModelsController.class
+api/response/apiResponse/ApiResponseApplication.class
+api/response/apiResponse/business/DTOs/Responses/GetAllUrls.class
+api/response/apiResponse/business/DTOs/Responses/GetAllAddressesResponse.class
+api/response/apiResponse/entities/concretes/Address.class
+api/response/apiResponse/core/utilities/mappers/ModelMapperManager.class
+api/response/apiResponse/business/concretes/ModelManager.class
+api/response/apiResponse/entities/concretes/Model.class
+api/response/apiResponse/business/concretes/AddressManager.class
+api/response/apiResponse/dataAccess/abstracts/AddressRepository.class
+api/response/apiResponse/dataAccess/abstracts/ModelRepository.class
+api/response/apiResponse/business/abstracts/ModelService.class
+api/response/apiResponse/webApi/controllers/AddressesController.class
+api/response/apiResponse/core/utilities/mappers/ModelMapperService.class
+api/response/apiResponse/business/abstracts/AddressService.class
