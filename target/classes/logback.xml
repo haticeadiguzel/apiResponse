@@ -4,7 +4,7 @@
     <property name="CONSOLE_LOG_PATTERN" value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"/>
     <property name="CONSOLE_LOG_CHARSET" value="UTF-8" />
     <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
-    <property name="LOG_FILE" value="log/app.log"/>
+    <property name="LOG_FILE" value="log/app.json"/>
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>${CONSOLE_LOG_PATTERN}</pattern>

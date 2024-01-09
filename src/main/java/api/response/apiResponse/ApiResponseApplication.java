@@ -1,5 +1,8 @@
 package api.response.apiResponse;
 
+import api.response.apiResponse.Logger.DatabaseLogger;
+import api.response.apiResponse.Logger.Logger;
+import api.response.apiResponse.Logger.RedisLogger;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,5 +22,11 @@ public class ApiResponseApplication {
 	@Bean
 	public ModelMapper getModelMapper() {
 		return new ModelMapper();
+	}
+
+	Logger[] loggers = {new DatabaseLogger(), new RedisLogger()};
+	@Bean
+	public Logger[] logger() {
+		return loggers;
 	}
 }

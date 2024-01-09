@@ -7,8 +7,12 @@ import org.json.JSONObject;
 import java.util.List;
 
 public interface AddressService {
-    List<GetAllAddressesResponse> getAddressesData();
+    void getAddressesData();
     Address convertToAddressEntity(GetAllAddressesResponse addressResponse);
-    JSONObject crunchifyWhois(String url);
+    void crunchifyWhois(String url);
     String getWhois(String url);
+    long getTotalCount(String url);
+    GetAllAddressesResponse getAddressResponse(String url, long page);
+    void processPage(List<GetAllAddressesResponse> responses, long page);
+    void handleTooManyRequests();
 }

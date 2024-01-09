@@ -1,5 +1,9 @@
 package api.response.apiResponse.business.concretes;
 
+import api.response.apiResponse.Exceptions.ApiRequestException;
+import api.response.apiResponse.Exceptions.TooManyGetRequestException;
+import api.response.apiResponse.Logger.Logger;
+import api.response.apiResponse.Logger.Utils;
 import api.response.apiResponse.business.DTOs.Responses.GetAllAddressesResponse;
 import api.response.apiResponse.business.abstracts.AddressService;
 import api.response.apiResponse.core.utilities.mappers.ModelMapperService;
@@ -11,7 +15,6 @@ import api.response.apiResponse.entities.concretes.Whois;
 import org.apache.commons.net.whois.WhoisClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.http.HttpStatus;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -19,7 +22,6 @@ import org.json.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 import com.google.gson.Gson;
-import org.springframework.web.server.ResponseStatusException;
 import redis.clients.jedis.Jedis;
 
 import java.util.*;
@@ -31,88 +33,55 @@ public class AddressManager implements AddressService {
     final private AddressRepository addressRepository;
     final private ModelMapperService modelMapperService;
     final private RedisRepository redisRepository;
+    final private Logger[] loggers;
     @Value("${address.url}")
-    private String url;
+    private String urlAPI;
     @Value("${spring.redis.host}")
     private String host;
     @Value("${spring.redis.port}")
     private int port;
 
-    public AddressManager(AddressRepository addressRepository, ModelMapperService modelMapperService, RedisRepository redisRepository) {
+    public AddressManager(AddressRepository addressRepository, ModelMapperService modelMapperService, RedisRepository redisRepository, Logger[] loggers) {
         this.addressRepository = addressRepository;
         this.modelMapperService = modelMapperService;
         this.redisRepository = redisRepository;
+        this.loggers = loggers;
     }
 
-//    @Scheduled(initialDelay = 1000, fixedRate = 21600000)
+    @Scheduled(initialDelay = 1000, fixedRate = 21600000)
     @Override
-    public List<GetAllAddressesResponse> getAddressesData() {
+    public void getAddressesData() {
         List<GetAllAddressesResponse> responses = new ArrayList<>();
-        Jedis jedis = new Jedis(host, port);
-        int pageCount = 10;
-
-//        WebClient.Builder builderPageCount = WebClient.builder();
-//        GetAllAddressesResponse addressPageCount = builderPageCount.build()
-//                .get()
-//                .uri(url)
-//                .retrieve()
-//                .bodyToMono(GetAllAddressesResponse.class)
-//                .block();
-//        Address addressEntityPageCount = convertToAddressEntity(addressPageCount);
-//        long pageCount = addressEntityPageCount.getPageCount();
-
-        for (int page = 1; page < pageCount; page++) {
-            try {
-                WebClient.Builder builder = WebClient.builder();
-                WebClient webClient = builder.baseUrl(url).build();
-                String pageUrl = String.format("?page=%d", page);
-                GetAllAddressesResponse address = webClient
-                        .get()
-                        .uri(pageUrl)
-                        .retrieve()
-                        .bodyToMono(GetAllAddressesResponse.class)
-                        .block();
-                responses.add(address);
-                Address addressEntity = convertToAddressEntity(address);
-//                addressRepository.save(addressEntity);
-
-                List<Model> models = addressEntity.getModels();
-                for (Model model : models) {
-                    String url = model.getUrl();
-                    JSONObject whoisJson = crunchifyWhois(url);
-                    if (whoisJson != null){
-                        Whois whois = new Gson().fromJson(whoisJson.toString(), Whois.class);
-                        System.out.println(url);
-                        jedis.sadd("urls", url);
-                        redisRepository.save(whois);
-                    } else {
-                        log.error("crunchifyWhois returned null for URL: " + url);
-                    }
-                }
-            } catch (WebClientResponseException.TooManyRequests e) {
-                log.warn("Too many Get request to api...");
-                try {
-                    Thread.sleep(3000);
-                    continue;
-                } catch (Exception exception) {
-                    log.error("Error: " + exception);
-                }
+        long totalCount = getTotalCount(urlAPI);
+        long pageCount = totalCount / 1550 + 1;
+        System.out.println(pageCount);
+        try {
+            for (long page = 0; page < pageCount; page++) {
+                processPage(responses, page);
             }
+        } catch (Exception e) {
+            handleTooManyRequests();
         }
-        return responses;
     }
 
     @Override
     public String getWhois(String url) {
-        Jedis jedis = new Jedis(host, port);
-        Map<String, String> result = jedis.hgetAll("whoises:" + url);
-        for (Map.Entry<String, String> entry : result.entrySet()) {
-            if (entry.getKey().equals("registryExpiryDate")) {
-                System.out.println("Field: " + entry.getKey() + ", Value: " + entry.getValue());
-                return entry.getValue();
+        try (Jedis jedis = new Jedis(host, port);) {
+            Map<String, String> result = jedis.hgetAll("whoises:" + url);
+            for (Map.Entry<String, String> entry : result.entrySet()) {
+                try {
+                    if (entry.getKey().equals("registryExpiryDate")) {
+                        log.info("Field: " + entry.getKey() + ", Value: " + entry.getValue());
+                        return entry.getValue();
+                    }
+                } catch (Exception e) {
+                    log.info("Error occured when getting data from redis...");
+                }
             }
+            return result.toString();
+        } catch (Exception e) {
+            return "Error: When connect to redis...";
         }
-        return result.toString();
     }
 
     @Override
@@ -121,7 +90,7 @@ public class AddressManager implements AddressService {
     }
 
     @Override
-    public JSONObject crunchifyWhois(String url) {
+    public void crunchifyWhois(String url) {
         StringBuilder whoisResult = new StringBuilder("");
         WhoisClient crunchifyWhois = new WhoisClient();
         try {
@@ -158,11 +127,66 @@ public class AddressManager implements AddressService {
                 jsonWhois.put(currentKey, currentValue.toString());
             }
             jsonWhois.put("URL", url);
+            Whois whois = new Gson().fromJson(jsonWhois.toString(), Whois.class);
+            System.out.println(url);
+            redisRepository.save(whois);
             crunchifyWhois.disconnect();
-            return jsonWhois;
+
         } catch (Exception e) {
             log.error(e.getMessage());
-            return null;
+        }
+    }
+
+    @Override
+    public long getTotalCount(String url) {
+        WebClient.Builder builderPageCount = WebClient.builder();
+        GetAllAddressesResponse addressTotalCount = builderPageCount.build()
+                .get()
+                .uri(url)
+                .retrieve()
+                .bodyToMono(GetAllAddressesResponse.class)
+                .block();
+        Address addressEntityTotalCount = convertToAddressEntity(addressTotalCount);
+        return addressEntityTotalCount.getTotalCount();
+    }
+
+    @Override
+    public GetAllAddressesResponse getAddressResponse(String url, long page) {
+        WebClient.Builder builder = WebClient.builder();
+        WebClient webClient = builder.baseUrl(url).build();
+        String pageUrl = String.format("?page=%d&per-page=1550", page);
+        return webClient
+                .get()
+                .uri(pageUrl)
+                .retrieve()
+                .bodyToMono(GetAllAddressesResponse.class)
+                .block();
+    }
+
+    @Override
+    public void processPage(@org.jetbrains.annotations.NotNull List<GetAllAddressesResponse> responses, long page) {
+        System.out.println("Page: " + page);
+        GetAllAddressesResponse address = getAddressResponse(urlAPI, page);
+        responses.add(address);
+        Address addressEntity = convertToAddressEntity(address);
+        addressRepository.save(addressEntity);
+
+        List<Model> models = addressEntity.getModels();
+        for (Model model : models) {
+            String url = model.getUrl();
+            crunchifyWhois(url);
+        }
+        Utils.runLoggers(loggers, "urls");
+    }
+
+    @Override
+    public void handleTooManyRequests() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException exception) {
+            throw new TooManyGetRequestException("Too many get request from api...");
+        } catch (Exception exception) {
+            throw new ApiRequestException("Per-page value is bigger than 1550...");
         }
     }
 }
