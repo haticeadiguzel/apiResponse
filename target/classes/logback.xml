@@ -2,8 +2,8 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/default.xml"/>
     <property name="CONSOLE_LOG_PATTERN" value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"/>
-    <property name="CONSOLE_LOG_CHARSET" value="UTF-8" />
-    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
     <property name="LOG_FILE" value="log/app.json"/>
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -25,8 +25,8 @@
         </triggeringPolicy>
     </appender>
     <root level="INFO">
-        <appender-ref ref="CONSOLE" />
-        <appender-ref ref="FILE" />
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
     </root>
     <logger name="com.thinkconstructive.springbootlogging" level="DEBUG"/>
 </configuration>

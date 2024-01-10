@@ -50,7 +50,7 @@ public class AddressManager implements AddressService {
 
     @Scheduled(initialDelay = 1000, fixedRate = 21600000)
     @Override
-    public void getAddressesData() {
+    public void fetchAddressesData() {
         List<GetAllAddressesResponse> responses = new ArrayList<>();
         long totalCount = getTotalCount(urlAPI);
         long pageCount = totalCount / 1550 + 1;
@@ -59,8 +59,15 @@ public class AddressManager implements AddressService {
             for (long page = 0; page < pageCount; page++) {
                 processPage(responses, page);
             }
-        } catch (Exception e) {
-            handleTooManyRequests();
+        }
+        catch (Exception e) {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException exception) {
+                throw new TooManyGetRequestException("Too many get request from api...", exception);
+            } catch (WebClientResponseException exception) {
+                throw new ApiRequestException("Per-page value is bigger than 1550...", exception);
+            }
         }
     }
 
@@ -131,7 +138,6 @@ public class AddressManager implements AddressService {
             System.out.println(url);
             redisRepository.save(whois);
             crunchifyWhois.disconnect();
-
         } catch (Exception e) {
             log.error(e.getMessage());
         }
@@ -179,14 +185,4 @@ public class AddressManager implements AddressService {
         Utils.runLoggers(loggers, "urls");
     }
 
-    @Override
-    public void handleTooManyRequests() {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException exception) {
-            throw new TooManyGetRequestException("Too many get request from api...");
-        } catch (Exception exception) {
-            throw new ApiRequestException("Per-page value is bigger than 1550...");
-        }
-    }
 }

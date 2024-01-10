@@ -15,18 +15,19 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableCaching
 public class ApiResponseApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ApiResponseApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ApiResponseApplication.class, args);
+    }
 
-	@Bean
-	public ModelMapper getModelMapper() {
-		return new ModelMapper();
-	}
+    @Bean
+    public ModelMapper getModelMapper() {
+        return new ModelMapper();
+    }
 
-	Logger[] loggers = {new DatabaseLogger(), new RedisLogger()};
-	@Bean
-	public Logger[] logger() {
-		return loggers;
-	}
+    Logger[] loggers = {new DatabaseLogger(), new RedisLogger()};
+
+    @Bean
+    public Logger[] logger() {
+        return loggers;
+    }
 }

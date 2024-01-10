@@ -56,7 +56,7 @@ networks:
     driver: bridge
 
 volumes:
-  postgres_data: {}
-  pgadmin_data: {}
-  redis_data: {}
-  redis_insight_data: {}
+  postgres_data: { }
+  pgadmin_data: { }
+  redis_data: { }
+  redis_insight_data: { }

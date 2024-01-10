@@ -16,12 +16,12 @@ public class AddressesController {
     private AddressService addressService;
 
     @GetMapping("/address/index")
-    public void getAll(){
-        addressService.getAddressesData();
+    public void getAll() {
+        addressService.fetchAddressesData();
     }
 
     @GetMapping("/getWhois/{url}")
-    public String getWhois(@PathVariable String url){
+    public String getWhois(@PathVariable String url) {
         return addressService.getWhois(url);
     }
 

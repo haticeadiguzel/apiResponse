@@ -8,7 +8,7 @@ import lombok.ToString;
 
 import java.util.List;
 
-@Table(name="addresses")
+@Table(name = "addresses")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

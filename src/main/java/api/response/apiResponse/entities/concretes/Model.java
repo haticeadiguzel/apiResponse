@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Table(name="models")
+@Table(name = "models")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
