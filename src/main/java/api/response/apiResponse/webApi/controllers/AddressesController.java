@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
@@ -21,10 +24,17 @@ public class AddressesController {
     }
 
     @GetMapping("/getWhois/{url}")
-    public String getWhois(@PathVariable String url) {
-        return addressService.getWhois(url);
+    public Map<String, String> getWhois(@PathVariable String url) {
+        return addressService.getWhoisResultFromRedis(url);
     }
 
-//    @GetMapping("/address/list")
-//    public String getWhoisList()
+    @GetMapping("/getWhois/{urls}")
+    public List<Map<String, String>> getWhoisList(@PathVariable List<String> urls) {
+        return addressService.getWhoisListResultFromRedis(urls);
+    }
+
+//    @GetMapping("/getWhois/Scheduled/{urls}")
+//    public List<Map<String, String>> getWhoisListScheduled(@PathVariable List<String> urls) {
+//        return addressService.getWhoisListResultFromRedis(urls);
+//    }
 }
