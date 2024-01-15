@@ -1,0 +1,19 @@
+version: "3"
+services:
+  apiresponse:
+    build:
+      context: .
+    container_name: apiResponse
+    ports:
+      - "8080:8080"
+    volumes:
+      - apiResponse_data:/var/lib/postgresql/data
+    restart: always
+
+networks:
+  default:
+    external:
+      name: apiResponseNetwork
+
+volumes:
+  apiResponse_data: { }

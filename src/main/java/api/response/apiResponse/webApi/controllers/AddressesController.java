@@ -23,18 +23,8 @@ public class AddressesController {
         addressService.fetchAddressesData();
     }
 
-    @GetMapping("/getWhois/{url}")
-    public Map<String, String> getWhois(@PathVariable String url) {
-        return addressService.getWhoisResultFromRedis(url);
-    }
-
-    @GetMapping("/getWhois/{urls}")
+    @GetMapping("/getWhoisResultFromRedis/{urls}")
     public List<Map<String, String>> getWhoisList(@PathVariable List<String> urls) {
         return addressService.getWhoisListResultFromRedis(urls);
-    }
-
-    @GetMapping("/getWhoisFromDefaultList")
-    public List<Map<String, String>>  getWhoisListScheduled() {
-        return addressService.defaultListUrl();
     }
 }
