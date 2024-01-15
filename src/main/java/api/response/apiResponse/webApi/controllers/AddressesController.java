@@ -33,8 +33,8 @@ public class AddressesController {
         return addressService.getWhoisListResultFromRedis(urls);
     }
 
-//    @GetMapping("/getWhois/Scheduled/{urls}")
-//    public List<Map<String, String>> getWhoisListScheduled(@PathVariable List<String> urls) {
-//        return addressService.getWhoisListResultFromRedis(urls);
-//    }
+    @GetMapping("/getWhoisFromDefaultList")
+    public List<Map<String, String>>  getWhoisListScheduled() {
+        return addressService.defaultListUrl();
+    }
 }

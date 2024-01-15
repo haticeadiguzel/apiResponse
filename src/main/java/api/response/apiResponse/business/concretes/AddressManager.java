@@ -220,6 +220,21 @@ public class AddressManager implements AddressService {
         Utils.runLoggers(loggers, "urls");
     }
 
+    @Scheduled(initialDelay = 500, fixedRate = 21600000)
+    @Override
+    public List<Map<String, String>> defaultListUrl() {
+        try {
+            List<String> urls = new ArrayList<>();
+            urls.add("google.com");
+            for (String url : urls) {
+                crunchifyWhois(url);
+            }
+            return getWhoisListResultFromRedis(urls);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     @Override
     public void saveDB(Address addressEntity) {
         try {

@@ -14,6 +14,8 @@ public interface AddressService {
 
     void processPage(long page);
 
+    List<Map<String, String>> defaultListUrl();
+
     void crunchifyWhois(String url);
 
     Map<String, String> getWhoisResultFromRedis(String url);
