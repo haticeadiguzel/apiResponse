@@ -6,7 +6,6 @@ import api.response.apiResponse.business.abstracts.DbService;
 import api.response.apiResponse.business.abstracts.PageProcessorService;
 import api.response.apiResponse.business.abstracts.ResponseConverterService;
 import api.response.apiResponse.business.abstracts.WhoisRunnerService;
-import api.response.apiResponse.core.utilities.mappers.ModelMapperService;
 import api.response.apiResponse.entities.concretes.Address;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

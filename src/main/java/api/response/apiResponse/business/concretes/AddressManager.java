@@ -15,8 +15,8 @@ import redis.clients.jedis.Jedis;
 
 import java.util.*;
 
-@Service
 @Slf4j
+@Service
 @EnableCaching
 public class AddressManager implements AddressService {
     final private WhoisRunnerService whoisRunnerService;
