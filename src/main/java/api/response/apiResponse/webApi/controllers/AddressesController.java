@@ -1,5 +1,6 @@
 package api.response.apiResponse.webApi.controllers;
 
+import api.response.apiResponse.business.DTOs.Responses.WhoisResultResponse;
 import api.response.apiResponse.business.abstracts.AddressService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -24,7 +24,7 @@ public class AddressesController {
     }
 
     @GetMapping("/getWhoisResultFromRedis/{urls}")
-    public List<Map<String, String>> getWhoisList(@PathVariable List<String> urls) {
+    public List<WhoisResultResponse> getWhoisList(@PathVariable List<String> urls) {
         return addressService.getWhoisListResultFromRedis(urls);
     }
 }

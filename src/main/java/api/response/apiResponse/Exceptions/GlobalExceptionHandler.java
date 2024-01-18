@@ -16,7 +16,6 @@ public class GlobalExceptionHandler {
 
         GlobalException globalException = new GlobalException(
                 e.getMessage(),
-                e,
                 httpStatus,
                 ZonedDateTime.now(ZoneId.of("Z"))
         );
@@ -30,7 +29,6 @@ public class GlobalExceptionHandler {
 
         GlobalException globalException = new GlobalException(
                 e.getMessage(),
-                e,
                 httpStatus,
                 ZonedDateTime.now(ZoneId.of("Z"))
         );
@@ -44,7 +42,6 @@ public class GlobalExceptionHandler {
 
         GlobalException globalException = new GlobalException(
                 e.getMessage(),
-                e,
                 httpStatus,
                 ZonedDateTime.now(ZoneId.of("Z"))
         );
@@ -58,7 +55,6 @@ public class GlobalExceptionHandler {
 
         GlobalException globalException = new GlobalException(
                 e.getMessage(),
-                e,
                 httpStatus,
                 ZonedDateTime.now(ZoneId.of("Z"))
         );
@@ -72,7 +68,6 @@ public class GlobalExceptionHandler {
 
         GlobalException globalException = new GlobalException(
                 e.getMessage(),
-                e,
                 httpStatus,
                 ZonedDateTime.now(ZoneId.of("Z"))
         );
@@ -86,7 +81,32 @@ public class GlobalExceptionHandler {
 
         GlobalException globalException = new GlobalException(
                 e.getMessage(),
-                e,
+                httpStatus,
+                ZonedDateTime.now(ZoneId.of("Z"))
+        );
+
+        return new ResponseEntity<>(globalException, httpStatus);
+    }
+
+    @ExceptionHandler(value = {RedisConnectionException.class})
+    public ResponseEntity<Object> redisConnectionException(RedisConnectionException e) {
+        HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
+
+        GlobalException globalException = new GlobalException(
+                e.getMessage(),
+                httpStatus,
+                ZonedDateTime.now(ZoneId.of("Z"))
+        );
+
+        return new ResponseEntity<>(globalException, httpStatus);
+    }
+
+    @ExceptionHandler(value = {SaveToDbException.class})
+    public ResponseEntity<Object> saveToDbException(SaveToDbException e) {
+        HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
+
+        GlobalException globalException = new GlobalException(
+                e.getMessage(),
                 httpStatus,
                 ZonedDateTime.now(ZoneId.of("Z"))
         );

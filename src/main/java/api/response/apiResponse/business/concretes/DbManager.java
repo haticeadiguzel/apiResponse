@@ -1,5 +1,6 @@
 package api.response.apiResponse.business.concretes;
 
+import api.response.apiResponse.Exceptions.*;
 import api.response.apiResponse.business.abstracts.DbService;
 import api.response.apiResponse.dataAccess.abstracts.AddressRepository;
 import api.response.apiResponse.entities.concretes.Address;
@@ -19,9 +20,8 @@ public class DbManager implements DbService {
     public void saveDB(Address addressEntity) {
         try {
             addressRepository.save(addressEntity);
-            log.info("Data saved successfully to the database.");
-        } catch (Exception e) {
-            log.error("Error saving data to the database", e);
+        } catch (Exception exception) {
+            throw new SaveToDbException("Error occurred while saving datas to DB", exception);
         }
     }
 }

@@ -10,7 +10,6 @@ import java.time.ZonedDateTime;
 @AllArgsConstructor
 public class GlobalException {
     private final String message;
-    private final Throwable throwable;
     private final HttpStatusCode httpStatusCode;
     private final ZonedDateTime timestamp;
 }
