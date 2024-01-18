@@ -1,5 +1,6 @@
 package api.response.apiResponse.business.concretes;
 
+import api.response.apiResponse.Exceptions.*;
 import api.response.apiResponse.business.DTOs.Responses.GetAllAddressesResponse;
 import api.response.apiResponse.business.abstracts.ResponseConverterService;
 import api.response.apiResponse.core.utilities.mappers.ModelMapperService;
@@ -18,6 +19,10 @@ public class ResponseConverterManager implements ResponseConverterService {
 
     @Override
     public Address convertToAddressEntity(GetAllAddressesResponse addressResponse) {
-        return this.modelMapperService.forResponse().map(addressResponse, Address.class);
+        try {
+            return this.modelMapperService.forResponse().map(addressResponse, Address.class);
+        } catch (Exception e) {
+            throw new ConvertToAddressEntityException("Error occurred while converting GetAllAddressesResponse to Address: ", e);
+        }
     }
 }

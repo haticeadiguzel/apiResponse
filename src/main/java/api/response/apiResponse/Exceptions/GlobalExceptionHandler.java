@@ -113,4 +113,17 @@ public class GlobalExceptionHandler {
 
         return new ResponseEntity<>(globalException, httpStatus);
     }
+
+    @ExceptionHandler(value = {ConvertToAddressEntityException.class})
+    public ResponseEntity<Object> convertToAddressEntityException(ConvertToAddressEntityException e) {
+        HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
+
+        GlobalException globalException = new GlobalException(
+                e.getMessage(),
+                httpStatus,
+                ZonedDateTime.now(ZoneId.of("Z"))
+        );
+
+        return new ResponseEntity<>(globalException, httpStatus);
+    }
 }

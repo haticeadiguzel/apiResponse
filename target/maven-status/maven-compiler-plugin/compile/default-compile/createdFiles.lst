@@ -4,10 +4,14 @@ api/response/apiResponse/Exceptions/ParseWhoisResultException.class
 api/response/apiResponse/business/abstracts/RedisService.class
 api/response/apiResponse/business/DTOs/Responses/GetAllAddressesResponse.class
 api/response/apiResponse/Exceptions/SaveWhoisResultToRedisException.class
+api/response/apiResponse/Exceptions/SaveToDbException.class
 api/response/apiResponse/business/abstracts/WhoisRunnerService.class
 api/response/apiResponse/Exceptions/WhoisResultRequestException.class
+api/response/apiResponse/business/DTOs/Responses/WhoisResultResponse.class
 api/response/apiResponse/business/concretes/ResponseConverterManager.class
+api/response/apiResponse/Exceptions/RedisConnectionException.class
 api/response/apiResponse/entities/concretes/Model.class
+api/response/apiResponse/Exceptions/ConvertToAddressEntityException.class
 api/response/apiResponse/business/concretes/WhoisRunnerManager.class
 api/response/apiResponse/Exceptions/TooManyGetRequestException.class
 api/response/apiResponse/business/concretes/PageProcessorManager.class

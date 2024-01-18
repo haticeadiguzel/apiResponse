@@ -30,7 +30,7 @@ public class PageProcessorManager implements PageProcessorService {
 
     @Override
     public void processPage(long page) {
-        log.info("Page: " + page);
+        log.info("Processing page: {}", page);
         GetAllAddressesResponse address = getAddressResponse(urlAPI, page);
         Address addressEntity = responseConverterService.convertToAddressEntity(address);
         dbService.saveDB(addressEntity);

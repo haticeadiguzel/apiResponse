@@ -42,7 +42,7 @@ public class WhoisRunnerManager implements WhoisRunnerService {
         String whoisResultString = getWhoisResultFromWhoisApi(url);
         JSONObject jsonWhois = parseWhoisResult(whoisResultString, url);
         redisService.saveRedis(jsonWhois);
-        System.out.println("Whois data processed for URL: " + url);
+//        System.out.println("Whois data processed for URL: " + url);
     }
 
     @Override
